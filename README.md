@@ -1,4 +1,5 @@
 # resty
+# chalk board : https://app.conceptboard.com/board/31uf-me1o-8t29-frt2-r6un
 # day 1
 ## user stories
 As a user, I expect an easy to read and understand user interface so that I can use the application intuitively
