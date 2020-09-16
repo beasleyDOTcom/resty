@@ -1,5 +1,5 @@
 import React from 'react';
-import '../contentArea/contentArea.scss';
+import '../contentArea/Results.scss';
 
 class Form extends React.Component{
   
@@ -8,13 +8,22 @@ class Form extends React.Component{
         this.state = {
             text: 'po po she show',
             url: '',
-            method: '',
+            method: 'get',
         };
     }
-
-    handleClick = event =>{
+    
+    handleSubmit = async event =>{
         event.preventDefault();
-        
+        // this.props.toggleLoading();
+
+        let WWEraw = await fetch(this.state.url);
+        let data = await WWEraw.json();
+        let headers = {};
+        WWEraw.headers.forEach((val, key)=> headers[key] = val)
+
+        //https://swapi.dev/api/people/
+
+        this.props.handleClick(data.count, data.results, headers);
     }
 
     handleURL = event => {
@@ -27,23 +36,22 @@ class Form extends React.Component{
         this.setState({method});
     }
 
-
     render(){
         return (
             <div className="FORM">
                 <div>
                     <input onChange = {this.handleURL}/>
-                    <button onClick={this.handleClick}>GO</button>
+                    <button onClick={this.handleSubmit}>{this.props.prompt}</button>
                 </div>
                 <div>
-                    <input onChange = {this.handleMethod} type = "radio" id="get" name ="method" value="get"/>
-                    <label for="get">GET</label>
+                    <input onChange = {this.handleMethod} type = "radio" id="get" name ="method" value="get" checked/>
+                    <label htmlFor="get">GET</label>
                     <input  onChange = {this.handleMethod} type = "radio" id="post" name="method" value = "post"/>
-                    <label for="post">POST</label>
+                    <label htmlFor="post">POST</label>
                     <input onChange = {this.handleMethod}  type = "radio" id="put" name ="method" value="put"/>
-                    <label for="put">PUT</label>
+                    <label htmlFor="put">PUT</label>
                     <input  onChange = {this.handleMethod} type = "radio" id="delete" name ="method" value="delete"/>
-                    <label for="delete">DELETE</label>
+                    <label htmlFor="delete">DELETE</label>
                 </div>
                 <section className="Content">
                     <text-area>{this.state.method +'   '+ this.state.url}</text-area>
