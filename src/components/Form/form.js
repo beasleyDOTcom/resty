@@ -22,8 +22,13 @@ class Form extends React.Component{
         WWEraw.headers.forEach((val, key)=> headers[key] = val)
 
         //https://swapi.dev/api/people/
-
-        this.props.handleClick(data.count, data.results, headers);
+        let request = {
+            count: data.count,
+            results: data.results,
+            headers: headers
+        }
+        console.log(request);
+        this.props.handleClick(request);
     }
 
     handleURL = event => {
@@ -40,11 +45,11 @@ class Form extends React.Component{
         return (
             <div className="FORM">
                 <div>
-                    <input onChange = {this.handleURL}/>
-                    <button onClick={this.handleSubmit}>{this.props.prompt}</button>
+                    <input placeholder="http://api.url.here" onChange = {this.handleURL}/>
+                    <button onClick={this.handleSubmit}>Go!</button>
                 </div>
                 <div>
-                    <input onChange = {this.handleMethod} type = "radio" id="get" name ="method" value="get" checked/>
+                    <input onChange = {this.handleMethod} type = "radio" id="get" name ="method" value="get"/>
                     <label htmlFor="get">GET</label>
                     <input  onChange = {this.handleMethod} type = "radio" id="post" name="method" value = "post"/>
                     <label htmlFor="post">POST</label>
