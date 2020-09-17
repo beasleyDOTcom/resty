@@ -7,3 +7,26 @@ text-area{
     width: 50vw;
     height: 20vh;
 }
+
+.loading {
+    
+    img{
+        margin: auto;
+        top: 20%;
+        // transition: 10s;
+        // transform: rotate(359deg);
+        animation: rotation .5s infinite linear;
+        // transform: rotateX(360deg);
+        width: 200px;
+        height: auto;
+    }
+}
+// animation: 3s linear 1s infinite alternate slidein;
+@keyframes rotation{
+    from {
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(359deg)
+    }
+}
