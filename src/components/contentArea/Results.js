@@ -13,7 +13,7 @@ export default function (props){
                 ) : (
                     <>
                     <h1> Results From API:</h1>
-                    <h3>Count: {props.request.count}</h3>
+                    <h3>Count: {props.response.count}</h3>
                     <h1> Headers: 
                     <ReactJson src={props.header}/></h1>
                     <h1>Results:</h1>

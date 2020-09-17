@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import App from '../App.js';
-import Results from '../components/contentArea/Results'
+import Results from '../components/contentArea/Results.js'
 import {rest} from 'msw';
 import {setupServer} from 'msw/node';
 

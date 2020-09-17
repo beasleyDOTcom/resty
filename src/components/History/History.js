@@ -2,6 +2,7 @@ import React from 'react';
 
 function History(props){
     const calls = props.calls || {};
+    console.log(props,'===============this is props in H I S T O R Y', props.calls)
 
     function loadRequest(apiCall){
         props.handler(apiCall);
