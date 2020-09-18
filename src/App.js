@@ -73,7 +73,7 @@ let response = results;
         this.updateHistory(request);
         console.log(response.headers, 'this is resonse headers');
         this.updateResults(response.headers, response.data);
-      }, 5000)
+      }, 2000)
 
     }
     catch(error){
@@ -93,7 +93,9 @@ let response = results;
       <Form request={this.state.request} handler={this.fetchResults}/>
       <section>
         <History handler={this.updateRequest} calls={this.state.history}/>
+      
         <Results loading={this.state.loading} header={this.state.headers} request={this.state.request} response={this.state.response}/>
+        
       </section>
       <Footer/>
     </BrowserRouter>

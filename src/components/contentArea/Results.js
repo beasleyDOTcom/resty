@@ -20,6 +20,7 @@ export default function (props){
                     <h1> Results From API:</h1>
                     <h3>Count: {props.response.count}</h3>
                     <h1> Headers: 
+                    
                     <ReactJson src={props.header}/></h1>
                     <h1>Results:</h1>
                      < ReactJson src={props.response}/>
@@ -31,5 +32,8 @@ export default function (props){
             
         </section>
     )
+    function results (){
+        return 
+    }
 }
 // {/* <Results loading={this.state.loading} request={this.state.request} response={this.state.response}/> */}
