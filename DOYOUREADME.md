@@ -29,3 +29,8 @@ As a user, I want to be able to use all REST methods so that I can do more than 
 As a user, I want a simple list of all previous queries I’ve run so that I can easily see which queries I’ve run before
 As a user, I want to click on an old query and have my selections appear in the form for me, so I don’t have to re-type them
 As a user, I want to see a “loading” indicator while RESTy is fetching data so that I know it’s working on my request
+
+# day 4
+### user stories
+-[] As a user, I want to see all of my previous queries as a separate page so that I can browse them in greater detail
+-[] As a user, I would like to view a separate “Help” page so I can learn how the application works
