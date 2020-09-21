@@ -7,18 +7,18 @@ function Header(){
         <header className="header">
             <h1>ReSTy</h1>
             <nav>
-                {/* <ul> */}
-                    {/* <li> */}
+                <ul>
+                    <li>
                         <NavLink to="/">Home</NavLink>
-                    {/* </li> */}
-                    {/* <li> */}
+                    </li>
+                    <li>
                         <NavLink to="/history" activeClassName="history">History</NavLink>
-                    {/* </li> */}
+                    </li> 
                     {/* look in class demo scss for how it handles the A tag on hover etc. */}
-                    {/* <li> */}
+                    <li>
                         <NavLink to ="/help">Help</NavLink>
-                    {/* </li> */}
-                {/* </ul> */}
+                    </li>
+                </ul> 
             </nav>
         </header>
     )
